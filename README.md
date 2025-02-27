@@ -2,7 +2,7 @@
 
 When using expert parallelism (EP), different experts are assigned to different GPUs. Because the load of different 
 experts may vary depending on the current workload, it is important to keep the load of different GPUs balanced. 
-As described in the DeepSeek-V3 paper, we adopt **redundant experts** strategy that duplicates heavy-loaded experts. 
+As described in the DeepSeek-V3 paper, we adopt a **redundant experts** strategy that duplicates heavy-loaded experts. 
 Then, we heuristically pack the duplicated experts to GPUs to ensure load balancing across different GPUs. Moreover, 
 thanks to the **group-limited expert routing** used in DeepSeek-V3, we also attempt to place the experts of the same 
 group to the same node to reduce inter-node data traffic, whenever possible.
