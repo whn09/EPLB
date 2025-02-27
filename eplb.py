@@ -42,7 +42,7 @@ def balanced_packing(weight: torch.Tensor, num_packs: int) -> Tuple[torch.Tensor
     return pack_index, rank_in_pack
 
 
-def replicate_experts(weight: torch.Tensor, num_phy: int) -> torch.Tensor:
+def replicate_experts(weight: torch.Tensor, num_phy: int) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
 
     """
     Replicate `num_log` experts to `num_phy` replicas, such that the maximum load of all replicas is minimized.
